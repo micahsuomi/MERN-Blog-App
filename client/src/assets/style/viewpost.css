@@ -1,0 +1,187 @@
+.viewpost-wrapper {
+    padding: 5rem 10rem;
+    background-color: rgb(243, 237, 237);
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; 
+
+}
+
+.viewpost-container {
+    border: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-position: center;
+    background-size: cover;
+    border-radius: 5px;
+    width: 80vw;
+    color: white;
+
+
+}
+
+.viewpost-header {
+    padding: 2rem 3rem;
+    width: 100%;
+
+}
+
+.back-to-posts__wrapper {
+    display: flex;
+    justify-content: flex-start;
+    
+}
+
+.back-to-posts__container {
+    padding: 1.2rem;
+    display: flex;
+    justify-content: space-evenly;
+    font-family: 'Montserrat';
+
+}
+
+.back-to-posts__link {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.back-to-posts__text {
+    margin-left: 1rem;
+}
+.back-to-posts__link:hover {
+    color: rgb(211, 182, 182);
+    transform: translateY(-.1rem);
+
+}
+
+
+
+.viewpost-header-container {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.viewpost-header {
+    color: black;
+    text-align: center
+}
+h3 {
+    margin: 2rem;
+    font-size: 17px;
+    color: white;
+}
+
+.viewpost-body {
+    background: rgb(247, 243, 243);
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.post-image__big {
+    width: 50%;
+    align-self: center;
+}
+
+.viewpost-description {
+    color: rgb(14, 13, 13);
+    line-height: 2.4;
+    margin-top: 2rem;
+
+}
+.buttons-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+button {
+    padding: 1rem;
+}
+
+.btn-edit,
+.btn-delete {
+    padding: 1.2rem;
+    background-color: rgb(81, 165, 199);
+    border: none;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    margin: 1rem;
+    font-family: 'Montserrat';
+    margin: 1.5rem;
+    width: 8rem;
+
+
+}
+
+.btn-delete {
+    background-color: #ee2031;
+    text-decoration: none;
+
+}
+
+.btn-edit:hover {
+    background-color: rgb(85, 152, 194);
+    transform: translateY(-.1rem);
+}
+.btn-delete:hover {
+    background-color: rgb(177, 43, 43);
+    transform: translateY(-.1rem);
+
+}
+
+@media screen and (max-width: 768px) {
+    .viewpost-wrapper {
+        padding: 5rem 4rem;
+        min-height: 100vw;
+  
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    h3 {
+        margin: .7rem;
+    }
+    .viewpost-container, 
+    .viewpost-body {
+        width: 22rem;
+    
+    }
+
+    .viewpost-header {
+        padding: 1rem 1rem;
+    }
+
+    .viewpost-description {
+        line-height: 1.1;
+    }
+
+    .buttons-wrapper {
+        margin-top: 0;
+    }
+
+    .btn-edit, .btn-delete {
+        padding: .7rem;
+        border: none;
+        border-radius: 3px;
+        color: white;
+        cursor: pointer;
+        margin: 1.2rem;
+        font-family: 'Montserrat';
+        margin: .6rem;
+        width: 6rem;
+    }
+}

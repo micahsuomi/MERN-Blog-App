@@ -1,0 +1,16 @@
+.footer {
+    background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);   
+    padding: 1rem 3rem;
+    
+
+}
+
+.footer-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footer-wrapper a {
+    text-decoration: none;
+    color: white;
+}

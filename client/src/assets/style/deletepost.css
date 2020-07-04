@@ -1,0 +1,32 @@
+.deletepost-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.deletepost-container {
+    padding: 4rem 5rem;
+    background-color: white;
+}
+
+.warning {
+    color: var(--violet);
+}
+
+.delete-cancel {
+    background-color: lightskyblue;
+
+}
+
+.delete-link {
+    text-decoration: none;
+}
+
+.delete-link {
+    text-decoration: none;
+}
+.delete-cancel:hover {
+    background-color: rgb(55, 139, 190);
+    transform: translateY(-.1rem);
+
+}

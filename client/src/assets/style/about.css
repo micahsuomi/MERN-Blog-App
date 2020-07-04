@@ -1,0 +1,72 @@
+.about-container {
+    padding: 4rem 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.about-header {
+    padding: 2rem;
+
+
+}
+
+.about-title {
+    text-align: center;
+}
+
+.about-body {
+    background: rgb(247, 243, 243);
+    padding: 3rem 7rem;
+    width: 100vw;
+
+}
+
+.about-paragraph {
+    padding: 2rem 1rem;
+    line-height: 1.9;
+   
+
+
+}
+
+.about-content {
+    text-align: center;
+}
+
+.about-images__container {
+    padding: 2rem 3rem;
+    margin-top: 2rem;
+}
+
+.tech-header {
+    margin-top: 4rem;
+    text-align: center;
+}
+.about-images__wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+
+}
+
+.tech-img {
+    width: 10rem;
+    height: 10rem;
+    margin: 2rem;
+}
+
+.css {
+    width: 7rem;
+}
+
+.node {
+    width: 18rem;
+
+}
+
+.express {
+    width: 20rem;
+}

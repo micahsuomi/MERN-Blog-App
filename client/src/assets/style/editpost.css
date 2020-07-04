@@ -1,0 +1,45 @@
+.edit-post__container {
+    padding: 8rem 7rem;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-form {
+    padding: 4rem 4rem;
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 1.9;
+    border: 3px solid #fff;
+    border-radius: 10px;
+    background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);         
+    color: white;
+    font-weight: 700;
+}
+
+.inputs-wrapper {
+    display: flex;
+    justify-content: center;
+}
+.edit-input {
+    margin-top: 1rem;
+    width: 18rem;
+    margin-right: .5rem;
+}
+
+textarea {
+    margin-top: 1rem;
+    border: none;
+    line-height: 1.8;
+}
+
+@media screen and (max-width: 500px) {
+    .edit-form {
+        width: 23rem;
+    }
+
+}
