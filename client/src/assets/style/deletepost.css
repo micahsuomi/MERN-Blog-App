@@ -4,9 +4,16 @@
     justify-content: center;
     align-items: center;
 }
+
 .deletepost-container {
-    padding: 4rem 5rem;
+    padding: 2rem 2rem;
     background-color: white;
+}
+
+.cancel-wrapper {
+    display: flex;
+    justify-content: flex-end;
+
 }
 
 .warning {
@@ -20,6 +27,11 @@
 
 .delete-link {
     text-decoration: none;
+    color: lightgrey;
+}
+
+.delete-link:hover {
+    color: var(--violet);
 }
 
 .delete-link {

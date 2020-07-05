@@ -23,6 +23,12 @@ const DeletePost = (props) => {
     return (
         <div className="viewpost-wrapper deletepost-wrapper">
         <div className="deletepost-container">
+            <div className="cancel-wrapper">
+            <NavLink to ={`/viewpost/${id}`}
+                    className="delete-link">
+                        <i class="fas fa-times fa-2x"></i>
+                        </NavLink>
+            </div>
             <h3 className="warning">Are you sure you want to delete this post?</h3>
             <div className="buttons-wrapper">
                 <NavLink to ='/posts' className="delete-link">
@@ -31,10 +37,7 @@ const DeletePost = (props) => {
                 className="btn-delete">
                     Delete</button>
                     </NavLink>
-                    <NavLink to ={`/viewpost/${id}`}
-                    className="delete-link">
-                        <button className="btn-cancel delete-cancel">Cancel</button>
-                        </NavLink>
+                
               
             </div>
         </div>
