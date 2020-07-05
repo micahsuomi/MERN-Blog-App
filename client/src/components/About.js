@@ -20,16 +20,16 @@ const About = () => {
                     <div className="about-images__container">
                         <h2 className="tech-header">Front End Technologies</h2>
                     <div className="about-images__wrapper">
-                        <img src={img1} className="tech-img"/>
-                        <img src={img2} className="tech-img css" />
-                        <img src={img3} className="tech-img" />
-                        <img src={img4} className="tech-img" />
+                        <img src={img1} className="tech-img" alt="HTML"/>
+                        <img src={img2} className="tech-img css" alt="CSS" />
+                        <img src={img3} className="tech-img" alt="JavaScript"/>
+                        <img src={img4} className="tech-img" alt="React" />
 
                     </div>
                     <h2 className="tech-header">Back End Technologies</h2>
                     <div className="about-images__wrapper">
-                    <img src={img5} className="tech-img node" />
-                        <img src={img6} className="tech-img express"/>
+                    <img src={img5} className="tech-img node" alt="Node Js"/>
+                        <img src={img6} className="tech-img express" alt="Express"/>
 
                     </div>
                     </div>

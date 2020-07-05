@@ -1,47 +1,61 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import {
-  BrowserRouter,
-  Route, 
-  Switch
-} from 'react-router-dom';
+import React, {Component} from 'react';
+import './App.css';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
-import PostList from './components/PostList';
+import About from './components/About';
 import AddPost from './components/AddPost';
+import PostList from './components/PostList';
+import ViewPost from './components/ViewPost';
 import DeletePost from './components/DeletePost';
 import EditPost from './components/EditPost';
-import ViewPost from './components/ViewPost';
 import Footer from './components/Footer';
-import './App.css';
+import axios from 'axios';
 
+
+import {BrowserRouter,
+  Route,
+  Switch,
+
+} from 'react-router-dom';
 
 class App extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      posts: []
-    }
-  }
-  
-  componentDidMount() {
-    this.fetchData();
+            posts: []
+            
+          }
+
   }
 
+  searchResult = () => {
+    console.log('connected')
+
+  }
+
+    //to fetch the data from the MONGODB database with axios
+  componentDidMount() {
+    this.fetchData()
+  }
+ 
   fetchData = () => {
     const url = 'http://localhost:5000/posts';
     axios.get(url)
-    .then((response) => {
-      console.log(response.data);
-      this.setState({posts: response.data});
-    })
+    .then(response => {
+      console.log(response.data)
+      this.setState({posts: response.data}
+        )})
+    
   }
+
 
   addPost = (newPost) => {
     this.fetchData()
     this.setState({posts: [newPost, ...this.state.posts]})
     console.log(this.state.posts, newPost)
   }
+
+  
 
   deletePost = () => {
   
@@ -66,16 +80,23 @@ class App extends Component {
     }
 
 
+
   render() {
-    return (
+
+    return  (
       <BrowserRouter>
-          <div className="wrapper App">
+
+      <div className="wrapper App">
         <div className="container">
-        <Navbar />
+          <Navbar />
+        
+            <Switch>
+            <Route path={"/addpost"} 
+            component={(props)=><AddPost 
+            {...props} 
+            addPost={this.addPost}/>} />
 
-        <Switch>
-
-        <Route path={`/viewpost/:id`} 
+            <Route path={`/viewpost/:id`} 
             component={(props)=><ViewPost 
             posts={this.state.posts} 
             id={props.match.params.id} 
@@ -94,25 +115,26 @@ class App extends Component {
             id={props.match.params.id} 
             editPost={this.editPost}/>}/>
 
-          <Route path="/posts" component={()=> <PostList
-          posts={this.state.posts} />} />
+            <Route path="/posts" component={()=><PostList 
+            posts={this.state.posts}
+            seachResult={this.searchResult}/>} />
 
-          <Route path="/addpost" component={(props) => <AddPost
-          {...props}
-          addPost={this.addPost} />} />
+            <Route path="/about" component={About} />
 
-          <Route path="/" component={Home} />
-        </Switch>
 
-        
+            <Route path="/" component={Home} />
+
+            </Switch>
+
+
       </div>
       </div>
-        <Footer />
-
+      <Footer />
       </BrowserRouter>
-    )
+
+    );
   }
-}
+  }
 
-export default App
 
+export default App;
