@@ -39,7 +39,7 @@ class App extends Component {
   }
  
   fetchData = () => {
-    const url = 'http://localhost:5000/posts';
+    const url = '/posts';
     axios.get(url)
     .then(response => {
       console.log(response.data)

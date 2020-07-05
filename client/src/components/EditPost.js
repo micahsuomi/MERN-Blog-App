@@ -107,67 +107,72 @@ class EditPost extends Component {
 
         return (
             <div className="edit-post__container">
-            <form onSubmit={this.handleSubmit} className="edit-form">
-            <div className="inputs-wrapper">
-            <input type="text" 
-            className="edit-input"
-            name="title" 
-            value={title}
-            onChange={this.handleChange}
-            onBlur={this.handleBlur}
-            required={true}/>
+            <form className="edit-form" onSubmit={this.handleSubmit}>
+                <div className="input-topics">
+                <label className="title-category">Title</label>
+                <div>
+                <input type="text" name="title"
+                value={title} placeholder="title" 
+                onChange={this.handleChange}
+                onBlur={this.handleBlur}
+                required={true}/>
+                {errors.title ? <Feedback error={errors.title} /> : ''}
+                </div>
 
-            <input type="text" 
-            className="edit-input"
-            name="author" 
-            value={author}
-            onChange={this.handleChange}
-            onBlur={this.handleBlur}
-            required={true}/>
+                <label className="title-category">Author</label>
+                <div>
+                <input type="text" name="author"
+                value={author} placeholder="author" 
+                onChange={this.handleChange}
+                onBlur={this.handleBlur}
+                required={true}/>
+                {errors.author ? <Feedback error={errors.author} /> : ''}
+                </div>
 
 
-            <select 
-            name="category" 
-            value={category} 
-            onChange={this.handleChange}
-            required={true}
-            className="edit-input">
-                <option value=''>----Select Category</option>
-                <option value='Work'>Work</option>
+                <div className="input-topics">
+                <label className="title-category">Category</label>
+                 <select name="category" value={category} 
+                 onChange={this.handleChange}
+                 required={true}>
+                    <option value=''>---Select Category</option>
+                    <option value='Work'>Work</option>
                     <option value='Entertainment'>Entertainment</option>
                     <option value='Travel'>Travel</option>
                     <option value='Sport'>Sport</option>
                     <option value='Other'>Other</option>
-            </select>
-            </div>
-            {errors.title ? <Feedback error={errors.title} /> : ''}
-
-            <label>Insert Image Link</label>
-            <input type="text" 
-            name="image"
-            value={image}
-            placeholder="insert image link" 
-            onChange={this.handleChange}/>
-            
-            <textarea type="text" 
-            name="description" 
-            value={description}
-            onChange={this.handleChange}
-            onBlur={this.handleBlur} 
-            required={true}/>
-            {errors.description ? <Feedback error={errors.description} /> : ''}
-
-            <div className="buttons-wrapper">
-            <button className="btn-save">Save</button>
-            <NavLink to ="/posts" className="nav-cancel">
-                <button className="btn-cancel">
+                </select>
+                </div>
+                </div>
+                
+                <label>Insert Image Link</label>
+                <input type="text" 
+                name="image"
+                placeholder="insert image link" 
+                value={image}
+                onChange={this.handleChange}/>
+                
+                <label>Write a New Post</label>
+                <textarea type="text" 
+                name="description"
+                category={description} 
+                placeholder="write here" 
+                onChange={this.handleChange}
+                onBlur={this.handleBlur} 
+                value={description}
+                required={true}/>
+                {errors.description ? <Feedback error={errors.description} /> : ''}
+               
+                <div className="buttons-wrapper">
+                <button onClick={this.addPost} className="btn-save">Save</button>
+                <NavLink to ="/posts" className="btn-cancel">
                     Cancel
-                    </button></NavLink>
-            </div>
+                    </NavLink>
+                </div>
 
-            
-        </form>
-            </div>
+
+            </form>
+        </div>
         )
     }
 }

@@ -30,7 +30,7 @@ class AddPost extends Component {
      handleSubmit = (e) => {
         e.preventDefault();
         const newPost = this.state.post;
-        const url = 'http://localhost:5000/posts';
+        const url = '/posts';
         console.log(url)
         axios.post(url, newPost).then((response) => {
             console.log(response)

@@ -1,11 +1,13 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import '../assets/style/postitem.css'
+import '../assets/style/postitem.css';
 
 
 const PostItem = (props) => {
    
-    let {_id, title, author, category, image, createdAt} = props.post
+    let {_id, title, author, category, image, createdAt} = props.post;
+  
+
 
     let postStyles = [
         {backgroundColor: 'var(--blue)'},
