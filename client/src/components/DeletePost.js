@@ -11,7 +11,6 @@ const DeletePost = (props) => {
         const url = `http://localhost:5000/posts/deletepost/${id}`;
         console.log(id)
         axios.delete(url).then(response => {
-          console.log(response);
           console.log('deleted')
         })
         props.history.push('/posts')

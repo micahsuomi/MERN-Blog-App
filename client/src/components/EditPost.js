@@ -33,10 +33,8 @@ class EditPost extends Component {
      handleSubmit = (e) => {
          e.preventDefault();
          const id = this.props.match.params.id;
-         console.log(id)
          const url = `http://localhost:5000/posts/editpost/${id}`
          const updatedPost = this.state.post;
-         console.log(updatedPost)
          axios.put(url, updatedPost).then(response => {
              console.log(response)
          })
@@ -56,7 +54,6 @@ class EditPost extends Component {
         const {name} = e.target;
         this.setState({
             touched: {...this.state.touched, [name] : true}})
-            console.log('blurring')
 
     }
 

@@ -33,7 +33,6 @@ class AddPost extends Component {
         const url = '/posts';
         console.log(url)
         axios.post(url, newPost).then((response) => {
-            console.log(response)
             console.log('saved')
         }).catch(error => {
             console.log(error.message)
@@ -49,14 +48,12 @@ class AddPost extends Component {
         const {name} = e.target;
         this.setState({
             touched: {...this.state.touched, [name] : true}})
-            console.log('blurring')
 
     }
 
     handleChange = (e) => {
         let {name, value} = e.target;
         const post = {...this.state.post,[name]: value}
-        console.log(value)
         this.setState({post})
        
 

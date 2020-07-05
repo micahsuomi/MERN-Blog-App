@@ -7,8 +7,6 @@ const PostItem = (props) => {
    
     let {_id, title, author, category, image, createdAt} = props.post;
   
-
-
     let postStyles = [
         {backgroundColor: 'var(--blue)'},
         {backgroundColor: 'var(--yellow)'},

@@ -42,7 +42,6 @@ class App extends Component {
     const url = '/posts';
     axios.get(url)
     .then(response => {
-      console.log(response.data)
       this.setState({posts: response.data}
         )})
     
@@ -52,7 +51,6 @@ class App extends Component {
   addPost = (newPost) => {
     this.fetchData()
     this.setState({posts: [newPost, ...this.state.posts]})
-    console.log(this.state.posts, newPost)
   }
 
   
@@ -67,13 +65,11 @@ class App extends Component {
   
 
   editPost = (updatedPost) => {
-    console.log(updatedPost)
     // const newPosts= this.state.posts.map((post) => {
     // return post.id === id ? newPost : post
     // })
     this.setState({updatedPost})
 
-    console.log(updatedPost)
     this.fetchData()
 
     
