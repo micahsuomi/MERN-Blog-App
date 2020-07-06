@@ -33,7 +33,7 @@ class EditPost extends Component {
      handleSubmit = (e) => {
          e.preventDefault();
          const id = this.props.match.params.id;
-         const url = `http://localhost:5000/posts/editpost/${id}`
+         const url = `/posts/editpost/${id}`
          const updatedPost = this.state.post;
          axios.put(url, updatedPost).then(response => {
              console.log(response)

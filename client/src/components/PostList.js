@@ -7,7 +7,7 @@ import {NavLink} from 'react-router-dom';
 
 const PostList = (props) => {
   let postList = props.posts.map((post) => (
-    <PostItem key={post.id} post={post} />
+    <PostItem key={post._id} post={post} />
   ))
 
   const filterResult = (newPosts) => {

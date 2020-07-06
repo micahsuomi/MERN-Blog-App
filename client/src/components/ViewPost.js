@@ -6,7 +6,6 @@ const ViewPost = (props) => {
     let {posts} = props;
     const id = props.match.params.id;
 
-    console.log(props)
  
     let postStyles = [
         {backgroundColor: 'var(--blue)'},
@@ -22,7 +21,6 @@ const ViewPost = (props) => {
         return post._id === props.match.params.id
     })
 
-    console.log(filteredPosts)
     
     let index = 0;
     if(filteredPosts.category.toLowerCase().includes('work')) {
