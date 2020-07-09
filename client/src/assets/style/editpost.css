@@ -89,27 +89,25 @@ textarea {
 }
 
 @media screen and (max-width: 500px) {
-    label {
-        display: none;
-    }
+    
     .edit-post__container {
-        padding: 6rem 2rem;
+        padding: 3rem 2rem;
         min-height: 100vh;
         
     }
 
     .edit-form {
         width: 23rem;
-        height: 30rem;
+        height: 43rem;
     }
 
     input {
-        width: 11rem;
+        width: 20rem;
         padding: .7rem;
 
     }
     select {
-        width: 8rem;
+        width: 20rem;
         padding: .8rem;
     }
 

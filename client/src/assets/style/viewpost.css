@@ -71,10 +71,10 @@
     color: black;
     text-align: center
 }
-h3 {
+.viewpost-header-container h3 {
     margin: 2rem;
     font-size: 17px;
-    color: white;
+    color: var(--dark);
 }
 
 .viewpost-body {
@@ -93,7 +93,7 @@ h3 {
 
 .viewpost-description {
     color: rgb(14, 13, 13);
-    line-height: 2.4;
+    line-height: 1.8;
     margin-top: 2rem;
 
 }
@@ -140,10 +140,19 @@ button {
 }
 
 @media screen and (max-width: 768px) {
+    .viewpost-container {
+        width: 94vw;
+    }
+
     .viewpost-wrapper {
-        padding: 5rem 4rem;
+        padding: 5rem 1rem;
         min-height: 100vw;
   
+    }
+
+    .viewpost-body {
+        padding: 2rem 2rem;
+      
     }
 }
 

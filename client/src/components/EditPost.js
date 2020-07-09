@@ -89,7 +89,7 @@ class EditPost extends Component {
 
   
     componentDidMount() {
-        const url = `http://localhost:5000/posts`
+        const url = `/posts`
         const id = this.props.match.params.id;
         axios.get(url).then(response => {
             let filteredPost = response.data.find((post) => post._id === id);
@@ -149,7 +149,6 @@ class EditPost extends Component {
                 value={image}
                 onChange={this.handleChange}/>
                 
-                <label>Write a New Post</label>
                 <textarea type="text" 
                 name="description"
                 category={description} 

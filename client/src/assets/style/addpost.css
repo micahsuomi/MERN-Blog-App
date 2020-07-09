@@ -92,9 +92,7 @@ textarea {
 }
 
 @media screen and (max-width: 500px) {
-    label {
-        display: none;
-    }
+   
     .add-post__container {
         padding: 6rem 2rem;
         min-height: 100vh;

@@ -48,25 +48,39 @@
 .about-images__wrapper {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-top: 2rem;
 
 }
 
 .tech-img {
-    width: 10rem;
-    height: 10rem;
+    width: 7rem;
+    height: 7rem;
     margin: 2rem;
 }
 
 .css {
-    width: 7rem;
+    width: 6rem;
 }
 
 .node {
-    width: 18rem;
+    width: 13rem;
 
 }
 
 .express {
-    width: 20rem;
+    width: 15rem;
+}
+
+@media screen and (max-width: 500px) {
+    .about-body {
+        padding: 2rem 1rem;
+        
+    
+    }
+
+    .about-images__wrapper {
+        flex-direction: column;
+
+    }
 }

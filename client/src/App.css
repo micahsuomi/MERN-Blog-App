@@ -14,6 +14,7 @@
   --green: rgba(30, 209, 149, 0.7);
   --violet: rgba(157, 33, 168, 0.7);
   --brown: rgba(133, 26, 44, 0.7);
+  --dark: rgb(46, 39, 40);
 }
 .wrapper {
   min-height: 100%;

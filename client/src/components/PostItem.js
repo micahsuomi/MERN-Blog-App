@@ -5,7 +5,7 @@ import '../assets/style/postitem.css';
 
 const PostItem = (props) => {
    
-    let {_id, title, author, category, image, createdAt} = props.post;
+    let {_id, title, author, category, image, description, createdAt} = props.post;
   
     let postStyles = [
         {backgroundColor: 'var(--blue)'},
@@ -68,10 +68,11 @@ const PostItem = (props) => {
                 </span>          
                      </NavLink>
                 </div>
-                <h3 className="post-title">{title}</h3>
-                <h3 className="post-author">Author: {author}</h3>
+                <h4 className="post-title">{title}</h4>
+                <p className="post-author">Author: {author}</p>
                 <img src={image} className="post-image__small" alt="blog post pic"/>
                 <p className="post-date">{createdAt}</p>
+                <p className="post-description">{description.substring(0, 300)}...</p>
                 <div className="category-wrapper" style={postStyles}>
                 <h3 className="post-category">{category}</h3>
                 <i className={iconStyles}></i>

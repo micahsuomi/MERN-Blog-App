@@ -7,18 +7,32 @@
     color: #fff;  
     border: 1px solid rgba(229, 243, 245, 0.5);
     margin: .2rem;
-    width: 46rem;
+    width: 22rem;
     border-radius: 3px;
     cursor: pointer;
-    padding: 2rem 3rem;
+    padding: 2rem 1.5rem;
     background-color: white;
     
 }
 
+.post-title {
+    margin-top: 1.6rem;
+
+}
+.post-author {
+    margin-top: .7rem;
+}
 
 .post-title,
 .post-author {
-    color: black;
+    text-align: center;
+
+}
+.post-title,
+.post-author,
+.post-description {
+    color: var(--dark);
+
 }
 
 .post-date {
@@ -64,6 +78,8 @@
 
 .post-image__small {
     width: 100%;
+    margin-top: 1rem;
+    border-radius: 3px;
 }
 
 .category-wrapper {
@@ -71,6 +87,12 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+.category-wrapper h3 {
+    margin: .8rem;
 }
 .fa-readme {
     color: rgb(234, 233, 247);
@@ -91,12 +113,28 @@
 .grow2 { transition: all .2s ease-in-out; }
 .grow2:hover { transform: scale(1.1);}
 
+@media screen and (max-width: 1024px) {
+    .post-item__container {
+        width: 29rem;
 
+        
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    .post-item__container {
+        width: 22rem;
+
+        
+    }
+    
+}
 
 @media screen and (max-width: 500px) {
     .post-item__container {
-        width: 18rem;
-        padding: 3rem 2rem;
+        width: 22rem;
+        padding: 3rem 1rem;
 
         
     }
