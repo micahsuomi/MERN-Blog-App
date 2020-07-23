@@ -22,9 +22,15 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-            posts: []
+            posts: [],
+            filteredPosts: [],
+            search: '',
+            name: 'search',
+            isLoading: true,
+            errorMsg: false
             
           }
+          
 
   }
 
@@ -42,10 +48,15 @@ class App extends Component {
     const url = '/posts';
     axios.get(url)
     .then(response => {
-      this.setState({posts: response.data}
+      this.setState({posts: response.data, isLoading: false}
         )})
+      .catch(err => {
+        console.log(err)
+        this.setState({errorMsg: true})
+      })
     
   }
+
 
 
   addPost = (newPost) => {
@@ -56,24 +67,30 @@ class App extends Component {
   
 
   deletePost = () => {
-  
     this.fetchData()
-    // const unDeletedPosts = this.state.posts.filter((post) => post.id !== e.target.id)
-    // this.setState({posts: unDeletedPosts})
-
+  
   }
   
 
   editPost = (updatedPost) => {
-    // const newPosts= this.state.posts.map((post) => {
-    // return post.id === id ? newPost : post
-    // })
     this.setState({updatedPost})
-
     this.fetchData()
 
     
     }
+  emptySearch = () => {
+    console.log('calling from app')
+    this.fetchData();
+  }
+
+  refresh = () => {
+    this.fetchData();
+  }
+
+  filterSearch = (newPostArr) => {
+    console.log('filter search from app', newPostArr)
+    this.setState({posts: newPostArr})
+  }
 
 
 
@@ -85,7 +102,7 @@ class App extends Component {
       <div className="wrapper App">
         <div className="container">
           <Navbar />
-        
+       
             <Switch>
             <Route path={"/addpost"} 
             component={(props)=><AddPost 
@@ -111,9 +128,19 @@ class App extends Component {
             id={props.match.params.id} 
             editPost={this.editPost}/>}/>
 
-            <Route path="/posts" component={()=><PostList 
+            <Route path={"/posts"} 
+            component={(props)=><PostList 
+            key={props.match.params.id}
             posts={this.state.posts}
-            seachResult={this.searchResult}/>} />
+            isLoading={this.state.isLoading}
+            errorMsg={this.state.errorMsg}
+            emptySearch={this.emptySearch}
+            filterSearch={this.filterSearch}
+            refresh={this.refresh}
+            {...props} 
+
+            
+           />} />
 
             <Route path="/about" component={About} />
 

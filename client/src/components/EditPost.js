@@ -135,6 +135,7 @@ class EditPost extends Component {
                     <option value=''>---Select Category</option>
                     <option value='Work'>Work</option>
                     <option value='Entertainment'>Entertainment</option>
+                    <option value='Culture'>Culture</option>
                     <option value='Travel'>Travel</option>
                     <option value='Sport'>Sport</option>
                     <option value='Other'>Other</option>

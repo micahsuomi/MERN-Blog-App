@@ -10,7 +10,8 @@
     border: 1px solid skyblue;
 }
 
-.search-btn {
+.search-btn,
+.refresh-btn {
     border-radius: 50px;
     margin-left: 1rem;
     margin-top: 1rem;
@@ -21,5 +22,23 @@
     cursor: pointer;
     background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);  
     color: white; 
+    border: none;
+    outline: none;
 
+}
+.refresh-btn {
+    margin-top: 0.5rem;
+}
+
+.refresh-btn:hover,
+.search-btn:hover {
+    background-image: linear-gradient(-60deg, #eb2c2c 0%, #bd7612 100%);  
+
+
+}
+
+.search-form__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

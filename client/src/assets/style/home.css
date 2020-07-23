@@ -57,3 +57,31 @@
     color: white;
     border: 2px solid white;
 }
+
+@media screen and (max-width: 768px) {
+    .home-container {
+        padding: 3rem 2rem;
+    }
+    .app-title {
+        font-size: 31px;
+    
+    
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .home-wrapper {
+        padding: 2rem;
+        width: 90vw;
+    }
+    .app-title {
+        font-size: 25px;
+        letter-spacing: .5rem;
+    
+    
+    }
+
+    .app-subtitle {
+        font-size: 14px;
+    }
+}
