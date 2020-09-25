@@ -54,18 +54,18 @@ textarea {
 }
 .btn-save,
 .btn-cancel {
-    padding: .7rem;
-    background-color: rgb(38, 140, 180);
+    padding: 1rem;
+    background-color: rgb(104, 210, 224);
     border: none;
-    border-radius: 3px;
+    border-radius: 50px;
     color: white;
     cursor: pointer;
+    margin: 1rem;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    text-transform: uppercase;
     margin: 1.5rem;
     width: 8rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
   
     
 }

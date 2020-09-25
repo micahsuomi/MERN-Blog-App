@@ -7,41 +7,35 @@ export default function usePosts(query) {
   const posts = useSelector(state => state.posts.posts);
   const filteredPosts = useSelector(state => state.posts.filteredPosts);
   const dispatch = useDispatch()
-  console.log(filteredPosts)
     const [ data, setData ] = useState([]);
     const [ err, setErr] = useState(null);
     const [ notFound, setNotFound ] = useState('');
 
+
+    // useEffect(() => {
+    //   console.log('i am calling')
+    //   setData(posts)
+    // }, [posts]);
+
     useEffect(() => {
-      setData(posts);
-      
-    }, [posts])
+      setData(posts)
+      return () => {
+        setData(false)
+
+      }
+    }, [posts, setData])
+
+    useEffect(() => {
+      console.log('Im the cone calling bitch')
+        setData(filteredPosts)      
+      }, [filteredPosts]);
 
     useEffect(() => {
       filterPosts()
-      
-    }, [query])
+    }, [query]);
     
-    // useEffect(() => {
-    //    setData(filteredPosts)
-    //  }, [filteredPosts]);
+   
   
-    /*useEffect(() => {
-           const getPosts = async () => {
-               try {
-                   const res = await axios.get('/posts')
-                   setData(res.data)
-                   setPosts(res.data)
-                   setIsLoading(false)
-                   
-               }
-               catch(err) {
-                   setErr(err)
-               }
-           } 
-           getPosts()
-       
-    }, [])*/
     const filterPosts = useCallback(
       () => {
         const results = posts.filter((post) => {
@@ -55,7 +49,6 @@ export default function usePosts(query) {
 
           }
         }) 
-        console.log(results)
         dispatch(searchPosts(results))
       },
       [posts, query, dispatch],

@@ -33,7 +33,6 @@ export default function(state = initialState, action) {
                 post: action.payload
             }
         case EDIT_POST:
-            console.log(action.payload)
             return {
                 ...state
             }
@@ -43,7 +42,6 @@ export default function(state = initialState, action) {
                 posts: state.posts.filter((p) => p._id !== action.payload)
             }
         case SEARCH_POSTS:
-            console.log(action.payload)
             return {
                 ...state,
                 filteredPosts: action.payload,

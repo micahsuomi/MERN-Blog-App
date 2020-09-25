@@ -1,5 +1,5 @@
 .viewpost-wrapper {
-    padding: 5rem 10rem;
+    padding: 5rem 14rem;
     background-color: rgb(243, 237, 237);
     width: 100vw;
     min-height: 100vh;
@@ -15,7 +15,8 @@
     justify-content: center;
     background-position: center;
     background-size: cover;
-    border-radius: 5px;
+    border-radius: 8px;
+    overflow: hidden;
     width: 80vw;
     color: white;
 
@@ -72,7 +73,7 @@
     text-align: center
 }
 .viewpost-header-container h3 {
-    margin: 2rem;
+    margin: 0;
     font-size: 17px;
     color: var(--dark);
 }
@@ -109,14 +110,16 @@ button {
 
 .btn-edit,
 .btn-delete {
-    padding: 1.2rem;
-    background-color: rgb(81, 165, 199);
+    padding: 1rem;
+    background-color: rgb(104, 210, 224);
     border: none;
-    border-radius: 3px;
+    border-radius: 50px;
     color: white;
     cursor: pointer;
     margin: 1rem;
     font-family: 'Montserrat';
+    font-size: 14px;
+    text-transform: uppercase;
     margin: 1.5rem;
     width: 8rem;
 
@@ -124,7 +127,7 @@ button {
 }
 
 .btn-delete {
-    background-color: #ee2031;
+    background-color: #ee205e;
     text-decoration: none;
 
 }
@@ -139,13 +142,13 @@ button {
 
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     .viewpost-container {
         width: 94vw;
     }
 
     .viewpost-wrapper {
-        padding: 5rem 1rem;
+        padding: 5rem 4rem;
         min-height: 100vw;
   
     }
@@ -157,6 +160,10 @@ button {
 }
 
 @media screen and (max-width: 500px) {
+    .viewpost-wrapper {
+        padding: 0;
+  
+    }
     .header-container {
         flex-direction: column;
         align-items: center;
@@ -170,6 +177,11 @@ button {
     
     }
 
+    .viewpost-body {
+        padding: 1rem 1rem;
+      
+    }
+
     .viewpost-header {
         padding: 1rem 1rem;
     }
@@ -179,18 +191,11 @@ button {
     }
 
     .buttons-wrapper {
-        margin-top: 0;
+        margin-top: 1rem;
     }
 
     .btn-edit, .btn-delete {
-        padding: .7rem;
-        border: none;
-        border-radius: 3px;
-        color: white;
-        cursor: pointer;
-        margin: 1.2rem;
-        font-family: 'Montserrat';
+        width: 7rem;
         margin: .6rem;
-        width: 6rem;
     }
 }

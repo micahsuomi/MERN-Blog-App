@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector} from 'react-redux'
 
-import { useSelector} from 'react-redux'
-
+import { getPosts } from './redux/actions/postsActions'; 
+import usePosts from './hooks/usePosts';
 import Navbar from './components/Navbar/index';
 import Home from './pages/Home/index';
 import About from './pages/About/index';
@@ -21,24 +22,9 @@ import {
 } from 'react-router-dom';
 
 const Routes = () => {
-//   const posts = useSelector(state => state.posts.filteredPosts);
-
- 
-  const handlePageClick = (selectedPage, offset) => {
-    console.log(selectedPage, offset)
-    // const selectedPage = e.selected;
-    // const offset = selectedPage * this.state.perPage;
-    this.setState({
-      currentPage: selectedPage,
-      offset: offset
-    }, () => {
-      console.log(this.state)
-    this.fetchData();
-    })
-  }
-
-
-
+    const dispatch = useDispatch()
+    const posts = useSelector(state => state.posts.posts)
+    console.log(posts)
     return  (
      
 
@@ -52,9 +38,12 @@ const Routes = () => {
             {...props} />} />
 
             <Route path={`/viewpost/:id`} 
-            component={(props)=><ViewPost 
+            component={(props)=> (
+            <ViewPost 
             id={props.match.params.id} 
-            {...props}/>}/>
+            posts={posts}
+            {...props}/>
+            )}/>
 
             <Route path={'/deletepost/:id'} 
             component={(props)=> <DeletePost 
@@ -68,13 +57,13 @@ const Routes = () => {
 
             <Route path={"/posts"} 
             component={(props)=>
-
             <PostList 
             key={props.match.params.id}
             {...props} 
            />}/>
 
             <Route path="/about" component={About} />
+
             <Route path="/" component={Home} />
 
             </Switch>

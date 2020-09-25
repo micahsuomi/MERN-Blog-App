@@ -10,7 +10,14 @@ import {
 } from './types';
 
 export const getPosts = () => dispatch => {
+    // console.log(posts)
+    // return {
+    //     type: GET_POSTS,
+    //     payload: posts
+    // }
     const url = '/posts';
+       
+    
         axios.get(url)
         .then((res) => dispatch({
             type: GET_POSTS,
@@ -24,7 +31,6 @@ export const getPosts = () => dispatch => {
 
 export const addPost = (post) => (dispatch) => {
     const url = '/posts';
-    console.log(post)
         axios.post(url, post)
         .then((res) =>         
         dispatch({
@@ -75,12 +81,23 @@ export const deletePost = (id) => (dispatch, getState) => {
 }
 
 export const searchPosts = (filteredResults) => {
-    console.log(filteredResults)
     return {
         type: SEARCH_POSTS,
         payload: filteredResults
 
     }
+ 
     
     
 }
+/*
+export function fetchPosts() {
+    const url = '/posts';
+    return async (dispatch) => {
+        const res = await axios.fetch(url)
+        console.log(res)
+        const posts = await res.json()
+        console.log(posts)
+        dispatch(getPosts(posts))
+    }
+}*/

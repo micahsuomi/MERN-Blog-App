@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
+import validator from 'validator';
 
 import { getPost, editPost } from '../../redux/actions/postsActions';
-import {NavLink} from 'react-router-dom';
-import validator from 'validator';
-import axios from 'axios';
 import '../AddPost/style.css';
 import './style.css';
 
@@ -16,7 +15,7 @@ const EditPost = (props) => {
     const filteredPost = useSelector(state => state.posts.post);
 
 
-
+    console.log(filteredPost)
     const [ post, setPost ] = useState({
                 title: '',
                 author: '',
@@ -32,12 +31,7 @@ const EditPost = (props) => {
      const handleSubmit = (e) => {
          e.preventDefault();
          const id = props.match.params.id;
-         
-        //  const url = `/posts/editpost/${id}`
-        //  
-        //  axios.put(url, updatedPost).then(response => {
-        //      console.log(response)
-        //  })
+        console.log(id, post)
         dispatch(editPost(id, post))
         props.history.push(`/posts`);
      }
@@ -45,9 +39,7 @@ const EditPost = (props) => {
     
     const handleChange = (e) => {
         let {name, value} = e.target;
-        const updatedPost = {...post, [name]:value}
-        setPost(updatedPost)
-        console.log(updatedPost)
+        setPost({...post, [name] : value})
         
     }
 
@@ -89,13 +81,19 @@ const EditPost = (props) => {
 
     useEffect(() => {
         dispatch(getPost(props.match.params.id))
-        // let filteredPost = response.data.find((post) => post._id === id);
         console.log(filteredPost)
-        setPost(filteredPost)
+
     }, [dispatch])
 
+    useEffect(() => {
+        setPost(filteredPost)
 
-        let { title, author, category, description, image } = filteredPost;
+    }, [filteredPost])
+
+    console.log(post)
+
+
+        let { title, author, category, description, image } = post;
         const errors = validate();
 
         return (
@@ -105,11 +103,11 @@ const EditPost = (props) => {
                 <label className="title-category">Title</label>
                 <div>
                 <input type="text" name="title"
-                value={title} placeholder="title" 
+                value={title} 
                 onChange={handleChange}
                 onBlur={handleBlur}
                 required={true}/>
-                {errors.title ? <Feedback error={errors.title} /> : ''}
+                {errors.title ? <Feedback error={errors.title} /> : ''} 
                 </div>
 
                 <label className="title-category">Author</label>
@@ -119,7 +117,7 @@ const EditPost = (props) => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 required={true}/>
-                {errors.author ? <Feedback error={errors.author} /> : ''}
+                {errors.author ? <Feedback error={errors.author} /> : ''} 
                 </div>
 
                 <div className="input-topics">
@@ -153,7 +151,7 @@ const EditPost = (props) => {
                 onBlur={handleBlur} 
                 value={description}
                 required={true}/>
-                {errors.description ? <Feedback error={errors.description} /> : ''}
+                {errors.description ? <Feedback error={errors.description} /> : ''} 
                
                 <div className="buttons-wrapper">
                 <button className="btn-save">Save</button>
