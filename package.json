@@ -10,7 +10,6 @@
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
-
   },
   "author": "Michele Zucca",
   "license": "ISC",
@@ -20,6 +19,9 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mongoose": "^5.9.21"
+    "mongoose": "^5.9.21",
+    "react-redux": "^7.2.1",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
   }
 }

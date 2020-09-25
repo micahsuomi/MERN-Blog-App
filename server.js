@@ -4,7 +4,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const Post = require('./server/models/Post');
 const app = express();
 const Router = require('./server/routes/routes');
 
@@ -21,27 +20,6 @@ const PORT = process.env.PORT || 5000;
 mongoose.connect(process.env.mongoDBurl, { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
     if (err) return console.log(err)
     console.log('the server is connected with MongoDB')
-})
-
-app.get('/posts', (req, res) => {
-    Post.find({}, (err, posts) => {
-        if(err) {
-            return res.status(404).send('Not Found');
-        } else {
-            res.json(posts);
-
-        }
-    })
-
-});
-
-app.post('/posts', (req, res) => {
-    console.log(req.body)
-    const newPost = new Post(
-        req.body
-    );
-    newPost.save().then(post => res.json(post));
-    console.log(newPost)
 })
 
 
