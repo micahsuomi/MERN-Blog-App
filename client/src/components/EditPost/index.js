@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import validator from 'validator';
 
-import { getPost, editPost } from '../../redux/actions/postsActions';
+import { getPosts, getPost, editPost } from '../../redux/actions/postsActions';
 import '../AddPost/style.css';
 import './style.css';
 
@@ -11,7 +11,6 @@ const Feedback = props => <p style={{color: 'red'}}>{props.error}</p>
 
 const EditPost = (props) => {
     const dispatch = useDispatch()
-    const [ singlePost, setSinglePost ] = useState();
     const filteredPost = useSelector(state => state.posts.post);
 
 
@@ -29,11 +28,11 @@ const EditPost = (props) => {
                 description: false
     })
      const handleSubmit = (e) => {
-         e.preventDefault();
-         const id = props.match.params.id;
-        console.log(id, post)
+        e.preventDefault();
+        const id = props.match.params.id;
         dispatch(editPost(id, post))
         props.history.push(`/posts`);
+        dispatch(getPosts())
      }
 
     
@@ -81,7 +80,6 @@ const EditPost = (props) => {
 
     useEffect(() => {
         dispatch(getPost(props.match.params.id))
-        console.log(filteredPost)
 
     }, [dispatch])
 
@@ -121,7 +119,7 @@ const EditPost = (props) => {
                 </div>
 
                 <div className="input-topics">
-                <label className="title-category">Category</label>
+                <label className="category">Category</label>
                  <select name="category" value={category} 
                  onChange={handleChange}
                  required={true}>

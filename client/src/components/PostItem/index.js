@@ -1,84 +1,36 @@
 import React from 'react';
-
 import { NavLink } from 'react-router-dom';
+
+import useStyles from '../../hooks/useStyles';
 import './style.css';
 
 const PostItem = (props) => {
+    const [stylesPosts, stylesIcons] = useStyles(props.post)
     let {_id, title, author, category, image, description, createdAt} = props.post;
-    let postStyles = [
-        {backgroundColor: 'var(--blue)'},
-        {backgroundColor: 'var(--yellow)'},
-        {backgroundColor: 'var(--purple)'},
-        {backgroundColor: 'var(--green)'},
-        {backgroundColor: 'var(--violet)'},
-        {backgroundColor: 'var(--brown)'}
     
-    ]
-
-    let iconStyles = {
-        work: 'fas fa-network-wired',
-        entertainment: 'fas fa-hamburger',
-        culture: 'fas fa-palette',
-        travel: 'fas fa-mountain',
-        sport: 'fas fa-football-ball',
-        other: 'fas fa-hourglass-start',
-
-
-    }
-    
-    let index = 0;
-    
-    if(category.toLowerCase().includes('work')) {
-        postStyles = postStyles[index];
-        iconStyles = iconStyles.work;
-
-    } else if(category.toLowerCase().includes('entertainment')) {
-        index = index +1
-        postStyles = postStyles[index]
-        iconStyles = iconStyles.entertainment;
-
-    } else if(category.toLowerCase().includes('culture')) {
-        index = index +2
-        postStyles = postStyles[index]
-        iconStyles = iconStyles.culture;
-
-    } else if(category.toLowerCase().includes('travel')) {
-        index = index +3
-        postStyles = postStyles[index];
-        iconStyles = iconStyles.travel;
-
-    }    else if(category.toLowerCase().includes('sport')) {
-        index = index +4
-        postStyles = postStyles[index];
-
-        iconStyles = iconStyles.sport;
-
-    } else {
-        index = index +4
-        postStyles = postStyles[index];
-        iconStyles = iconStyles.other;
-
-
-    }
     return (
 
-            <div className="post-item__container grow" >
+            <div className="post-item__container" >
             <div className="post-item__wrapper">
                 <div className="view-container">
-                <NavLink to={`/viewpost/${_id}`} className="link">
+                <NavLink to={`/viewpost/${_id}`} className="link grow">
                 <span className="read">  
                 Read 
                 </span>          
                      </NavLink>
                 </div>
+                <div className="post-body">
                 <h4 className="post-title">{title}</h4>
                 <p className="post-author">Author: {author}</p>
-                <img src={image} className="post-image__small" alt="blog post pic"/>
+                <div className="post-image">
+                <img src={image} alt="blog post pic"/>
+                </div>
                 <p className="post-date">{createdAt}</p>
                 <p className="post-description">{description.substring(0, 150)}...</p>
-                <div className="category-wrapper" style={postStyles}>
+                <div className="category-wrapper" style={stylesPosts}>
                 <h3 className="post-category">{category}</h3>
-                <i className={iconStyles}></i>
+                <i className={stylesIcons}></i>
+                </div>
                 </div>
                 
             </div>

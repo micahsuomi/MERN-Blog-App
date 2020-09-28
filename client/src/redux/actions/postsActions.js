@@ -10,14 +10,7 @@ import {
 } from './types';
 
 export const getPosts = () => dispatch => {
-    // console.log(posts)
-    // return {
-    //     type: GET_POSTS,
-    //     payload: posts
-    // }
-    const url = '/posts';
-       
-    
+    const url = '/posts';  
         axios.get(url)
         .then((res) => dispatch({
             type: GET_POSTS,
@@ -46,16 +39,18 @@ export const addPost = (post) => (dispatch) => {
 
 export const getPost = (id) => dispatch => {
     const url = `/posts`
-    axios.get(url).then(response => dispatch({
+    axios.get(url).then(res => dispatch({
         type: GET_POST,
-        payload: response.data.find((post) => post._id === id)
+        payload: res.data.find((post) => post._id === id)
        }))
        .catch((err) => {
            console.log(err)
        })
 }
 export const editPost = (id, updatedPost) => dispatch => {
-    const url = `/posts/editpost/${id}`
+    const url = `/posts/${id}`
+    console.log(updatedPost)
+    
          axios.put(url, updatedPost).then(res => dispatch({
             type: EDIT_POST,
             payload: res.data

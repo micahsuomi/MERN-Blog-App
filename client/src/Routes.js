@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector} from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 import { getPosts } from './redux/actions/postsActions'; 
-import usePosts from './hooks/usePosts';
+import usePosts from './hooks/usePosts.js';
 import Navbar from './components/Navbar/index';
 import Home from './pages/Home/index';
 import About from './pages/About/index';
 import AddPost from './components/AddPost/index';
 import PostList from './pages/PostList/index';
-import ViewPost from './components/ViewPost/index';
+import ViewPost from './pages/ViewPost/index';
 import DeletePost from './components/DeletePost/index';
 import EditPost from './components/EditPost/index';
 import Footer from './components/Footer/index';
-
 import './App.css';
 
 import {
@@ -23,8 +22,23 @@ import {
 
 const Routes = () => {
     const dispatch = useDispatch()
-    const posts = useSelector(state => state.posts.posts)
-    console.log(posts)
+    const [ query, setQuery ] = useState('');
+    let [ postsToSort, setPostsToSort ] = useState([])
+    const [ err, posts, sortByAuthor, sortByCategory, isLoading ] = usePosts(query, postsToSort);
+    useEffect(() => {
+        dispatch(getPosts())
+    
+    }, [dispatch])
+
+    const sortPosts = () => {
+      setPostsToSort(posts)
+      console.log('I am calling', postsToSort)
+
+
+    }
+
+    console.log(sortByAuthor)
+
     return  (
      
 
@@ -58,11 +72,19 @@ const Routes = () => {
             <Route path={"/posts"} 
             component={(props)=>
             <PostList 
-            key={props.match.params.id}
+            posts={posts}
+            query={query}
+            setQuery={setQuery}
             {...props} 
            />}/>
 
-            <Route path="/about" component={About} />
+            <Route path="/about" component={(props)=><About 
+            posts={posts}
+            sortPosts={sortPosts}
+            sortByAuthor={sortByAuthor}
+            sortByCategory={sortByCategory}
+            isLoading={isLoading}
+            {...props}/>} />
 
             <Route path="/" component={Home} />
 

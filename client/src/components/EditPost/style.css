@@ -31,6 +31,10 @@
     margin-left: 1rem;
 }
 
+.category {
+    margin-left: 0;
+}
+
 label {
     align-self: flex-start;
     margin-left: 2.3rem;
@@ -38,13 +42,13 @@ label {
 input,
 select,
 textarea {
-    width: 40rem;
+    width: 30rem;
     padding: .6rem;
     font-size: 16px;
     font-family: 'Montserrat';
     border-radius: 3px;
     border: 1px solid lightgray;
-    margin-top: .6rem;
+    margin-top: .4rem;
 }
 textarea {
     height: 15rem;
@@ -54,7 +58,7 @@ textarea {
 }
 .btn-save,
 .btn-cancel {
-    padding: 1rem;
+    padding: .7rem;
     background-color: rgb(104, 210, 224);
     border: none;
     border-radius: 50px;
@@ -64,7 +68,7 @@ textarea {
     font-family: 'Montserrat';
     font-size: 14px;
     text-transform: uppercase;
-    margin: 1.5rem;
+    margin: 1.1rem;
     width: 8rem;
   
     

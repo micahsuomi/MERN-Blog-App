@@ -8,6 +8,7 @@
 :root {
   --primary: #ff5858;
   --primary-dark: #bb2e2e;
+  --primary-light: #ec4747;
   --secondary: #f09819;
   --blue: rgba(112, 131, 241, 0.7);
   --yellow: rgba(206, 203, 14, 0.7);

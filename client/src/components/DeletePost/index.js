@@ -1,10 +1,9 @@
 import React from 'react';
-
 import { useDispatch } from 'react-redux'
 import { NavLink } from 'react-router-dom';
+
 import { deletePost } from '../../redux/actions/postsActions';
 import './style.css';
-
 
 const DeletePost = (props) => {
     const dispatch = useDispatch()
@@ -14,7 +13,6 @@ const DeletePost = (props) => {
             props.history.push('/posts');            
       
     }
-
 
     return (
         <div className="viewpost-wrapper deletepost-wrapper">
@@ -32,9 +30,7 @@ const DeletePost = (props) => {
                 onClick={deleteOnClick} 
                 className="btn-delete">
                     Delete</button>
-                    </NavLink>
-                
-              
+                    </NavLink>    
             </div>
         </div>
         </div>

@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    min-height: 100vh;
 
 }
 
@@ -36,45 +37,26 @@
     text-align: center;
 }
 
-.about-images__container {
-    padding: 2rem 3rem;
-    margin-top: 2rem;
+.sorting-container {
+    padding: 1rem;
 }
 
-.tech-header {
-    margin-top: 4rem;
-    text-align: center;
-}
-.about-images__wrapper {
-    display: flex;
-    justify-content: center;
+.sorted-container {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    justify-items: center;
     align-items: center;
+    background-color: rgb(235, 224, 224);
+    padding: .6rem;
+    box-shadow: 0 1rem 2rem rgba(111,111,111,0.4);
+    margin: .5rem;
+    border-radius: 3px;
+    
+}
+
+.sorted-container:nth-of-type(2) {
     margin-top: 2rem;
 
-}
-
-.tech-img {
-    width: 7rem;
-    height: 7rem;
-    margin: 2rem;
-}
-
-.css {
-    width: 6rem;
-}
-
-.node {
-    width: 13rem;
-
-}
-
-.express {
-    width: 15rem;
-}
-
-.mongodb {
-    width: 12rem;
-    height: 4rem;
 }
 
 @media screen and (max-width: 500px) {

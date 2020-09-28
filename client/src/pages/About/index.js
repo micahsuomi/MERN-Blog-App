@@ -1,42 +1,54 @@
 import React from 'react';
 
-import img1 from '../../assets/imgs/html-logo.png';
-import img2 from '../../assets/imgs/css-logo.png';
-import img3 from '../../assets/imgs/js-logo.png';
-import img4 from '../../assets/imgs/react-logo.png';
-import img5 from '../../assets/imgs/node-logo.png';
-import img6 from '../../assets/imgs/express-logo.png';
-import img7 from '../../assets/imgs/mongodb-logo.png';
+import SortByAuthor from '../../components/SortByAuthor';
+import SortByCategory from '../../components/SortByCategory';
 import './style.css';
 
-const About = () => {
+const About = ({ sortPosts, sortByAuthor, sortByCategory, isLoading }) => {
+    
     return (
         <div className="about-container">
             <div className="about-header">
-            <h1 className="about-title">About</h1>
+            <h2 className="about-title">Blog Stats</h2>
             </div>
             <div className="about-body">
-                <div className="about-paragraph">
-                    <p className="about-content">This MERN app is built with React and Node. It's a CRUD application where users can view and navigate through blog posts, add, delete, and edit posts. The client uses Axios to fetch the posts API data.</p>
-                    <div className="about-images__container">
-                        <h2 className="tech-header">Front End Technologies</h2>
-                    <div className="about-images__wrapper">
-                        <img src={img1} className="tech-img" alt="HTML"/>
-                        <img src={img2} className="tech-img css" alt="CSS" />
-                        <img src={img3} className="tech-img" alt="JavaScript"/>
-                        <img src={img4} className="tech-img" alt="React" />
-
+                {
+                    isLoading ? 
+                    <div>
+                    <div className="sorting-container">
+                    <SortByAuthor sortPosts={sortPosts()}/>
+                    { 
+                        sortByAuthor.map((author, i) => (
+                            <div key={i} className="sorted-container">
+                            <p>{author.author}</p>
+                            <i class="fas fa-chart-bar"></i>
+                            <p>Posts: {author.posts}</p>
+                            </div>
+                        ))
+                        }  
                     </div>
-                    <h2 className="tech-header">Back End Technologies</h2>
-                    <div className="about-images__wrapper">
-                    <img src={img5} className="tech-img node" alt="Node Js"/>
-                    <img src={img6} className="tech-img express" alt="Express"/>
-                    <img src={img7} className="tech-img mongodb" alt="Mongo DB"/>
 
+                        <div className="sorting-container">
+                        <SortByCategory sortPosts={sortPosts}/>
+                        { 
+                            sortByCategory.map((category, i) => (
+                                <div key={i} className="sorted-container">
+                                <p>{category.category}</p>
+                                <i class="fas fa-chart-bar"></i>
+                                <p>Posts: {category.posts}</p>
+                                </div>
+                            ))
+                        } 
+                    </div>
+                    </div> 
+                    :
+                    <div className="loading-container">
+                    <div className="lds-circle"><div></div></div>
+                    <h1>Loading Stats...</h1>
+                    </div>
 
-                    </div>
-                    </div>
-                </div>
+                }
+      
             </div>
         </div>
     )

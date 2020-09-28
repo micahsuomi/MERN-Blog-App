@@ -1,32 +1,21 @@
+import React, { Component } from 'react'
 import ReactPaginate from 'react-paginate';
 
-
-import React, { Component } from 'react'
-
-class Paginate extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            offset: 0,
-            perPage: 6,
-            currentPage: 0,
-        }
-    }
+const Paginate = () => {
     
-
-    handlePageClick = (e) => {
+    const [offset, setOffset] = useState(0);
+    const [perPage, setPerPage] = useState(5);
+    const [pageCount, setPageCount] = useState(0);
+    const [currentPage, setCurrentPage] = useState(0);
+    
+    const handlePageClick = (e) => {
         const selectedPage = e.selected;
-        const offset = selectedPage * this.state.perPage;
+        const offset = selectedPage * perPage;
         console.log('working here')
-        this.setState({
-          currentPage: selectedPage,
-          offset: offset
-        }, () => {
-        this.props.paginate();
-        })
+        setCurrentPage(selectedPage);
+        setOffset(offset);
+    
       }
-    render() {
-        console.log(this.state)
         return (
             <div>
                 <ReactPaginate
@@ -37,13 +26,13 @@ class Paginate extends Component {
                   pageCount={this.state.pageCount}
                   marginPagesDisplayed={2}
                   pageRangeDisplayed={5}
-                  onPageChange={this.handlePageClick}
+                  onPageChange={handlePageClick}
                   containerClassName={"pagination"}
                   subContainerClassName={"pages pagination"}
                   activeClassName={"active"}/>
               </div> 
         )
-    }
+    
 }
 
 export default Paginate;

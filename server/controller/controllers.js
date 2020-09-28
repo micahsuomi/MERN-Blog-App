@@ -1,5 +1,4 @@
 const Post = require('../models/Post');
-//destination when multer will store the files
 
 function getAllPostsAPI(req, res) {
     Post.find({}, (err, posts) => {
@@ -35,10 +34,11 @@ function editPost(req, res) {
         post.category = category
         post.description = description
         post.image = image
-        post.save(err => {
-            if (err) return res.status(404).send(err);
-            res.redirect('/')
-        })
+        post.save()
+        .then(updatedPost => res.json(updatedPost))
+        .catch(err => res.status(404).json({success: false})) 
+        res.redirect('/')
+
     })
 }
 

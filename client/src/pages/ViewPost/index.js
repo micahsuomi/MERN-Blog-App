@@ -1,15 +1,13 @@
 import React from 'react';
-
 import {NavLink} from 'react-router-dom';
-import './style.css';
 
+import './style.css';
 
 const ViewPost = (props) => {
 
-    let {posts} = props;
+    let { posts } = props;
     const id = props.match.params.id;
 
- 
     let postStyles = [
         {backgroundColor: 'var(--blue)'},
         {backgroundColor: 'var(--yellow)'},
@@ -66,7 +64,7 @@ const ViewPost = (props) => {
                
 
                 <div className="viewpost-body">
-                <img src={filteredPosts.image} className="post-image__big" alt={filteredPosts.title}/>
+                <img src={filteredPosts.image} className="post-image" alt={filteredPosts.title}/>
                 <p className="viewpost-description">{filteredPosts.description}</p>
             <div className="buttons-wrapper">
             <NavLink to={`/editpost/${id}`}> 

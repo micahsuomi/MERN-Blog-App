@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { addPost } from '../../redux/actions/postsActions';
@@ -18,12 +18,12 @@ const AddPost = (props) => {
                 description: '',
                 image: ''
     })
+    
     const [ touched, setTouched ] = useState({
                 title: false,
                 auhtor: false,
                 description: false
     })
-
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -113,7 +113,7 @@ const AddPost = (props) => {
 
     
                     <div className="input-topics">
-                    <label className="title-category">Category</label>
+                    <label className="category">Category</label>
                      <select name="category" value={category} 
                      onChange={handleChange}
                      required={true}>
