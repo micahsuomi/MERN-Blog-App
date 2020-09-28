@@ -5,8 +5,7 @@ import './style.css';
 const SortByAuthor = ({ sortPosts }) => {
     return (
         <div
-        className="cell__item grow"
-      >
+        className="cell__item grow">
         <form className="cell__form">
           <label htmlFor="name">
             Posts by Author
@@ -19,11 +18,6 @@ const SortByAuthor = ({ sortPosts }) => {
           />
         </form>
         <i class="fas fa-pen-nib"></i>
-        {/* {isRegionReversing ? (
-          <i className="fas fa-chevron-up"></i>
-        ) : (
-          <i className="fas fa-chevron-down"></i>
-        )} */}
       </div>
     )
 }
