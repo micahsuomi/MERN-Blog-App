@@ -1,159 +1,149 @@
-
 .post-item__container {
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #fff;  
-    border: 1px solid rgba(229, 243, 245, 0.5);
-    margin: .2rem;
-    width: 22rem;
-    border-radius: 3px;
-    padding: 2rem 1.5rem;
-    background-color: white;
-    
+  display: grid;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border: 1px solid rgba(229, 243, 245, 0.5);
+  margin: 0.2rem;
+  width: 80vw;
+  border-radius: 3px;
+  padding: 2rem 1.5rem;
+  background-color: white;
 }
 
 .post-title {
-    margin-top: 1.6rem;
-
+  margin-top: 1.6rem;
 }
 .post-author {
-    margin-top: .7rem;
+  margin-top: 0.7rem;
 }
 
 .post-title,
 .post-author {
-    text-align: center;
-
+  text-align: center;
 }
 .post-title,
 .post-author,
 .post-description {
-    color: var(--dark);
-
+  color: var(--dark);
 }
 
 .post-description {
-    min-height: 5rem;
+  min-height: 5rem;
+  margin-top: 1rem;
 }
 
 .post-date {
-    color: var(--primary);
-    text-align: center;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-    font-weight: 700;
+  color: var(--primary);
+  text-align: center;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
 }
 .view-container {
-    display: flex;
-    align-items: center;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .post-item__wrapper h3 {
-    text-align: center;
+  text-align: center;
 }
 
-
-
 .link {
-    text-decoration: none;
-    color: white;
-    cursor: pointer;
-
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
 }
 
 .read {
-    /* background: rgb(197, 7, 102); */
-    background: var(--primary);
-    padding: .8rem;
-    border-radius: 3px;
-    width: 12rem;
+  /* background: rgb(197, 7, 102); */
+  background: var(--primary);
+  padding: 0.8rem;
+  border-radius: 3px;
+  width: 12rem;
 }
 
 .post-body {
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
 }
 .read:hover {
-    /* background: rgb(131, 11, 71); */
-    background: var(--primary-dark);
-    transform: translateY(-.1rem);
-
+  /* background: rgb(131, 11, 71); */
+  background: var(--primary-dark);
+  transform: translateY(-0.1rem);
 }
 .post-image {
-    display: inline-block;
-    overflow: hidden;
-    height: 243px;
-    width: 243px;
-    margin-top: 2rem; 
-    object-fit: cover;
-    border-radius: 5px;
-
+  display: inline-block;
+  overflow: hidden;
+  height: 243px;
+  width: 243px;
+  margin-top: 2rem;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
 img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-       
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
-
 .category-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-top: 1rem;
-    padding: 1rem;
-    width: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 1rem;
+  padding: 0.8rem;
+}
+.category-item {
+  width: 15rem;
+  padding: 0.7rem;
+  border-radius: 3px;
 }
 
 .category-wrapper h3 {
-    margin: .8rem;
 }
-
 
 .fa-readme:hover {
-    color: rgb(86, 218, 235);
-
-
+  color: rgb(86, 218, 235);
 }
 
+.grow {
+  transition: all 0.2s ease-in-out;
+}
+.grow:hover {
+  transform: scale(1.03);
+}
 
-.grow { transition: all .2s ease-in-out; }
-.grow:hover { transform: scale(1.03);}
-
-.grow2 { transition: all .2s ease-in-out; }
-.grow2:hover { transform: scale(1.1);}
+.grow2 {
+  transition: all 0.2s ease-in-out;
+}
+.grow2:hover {
+  transform: scale(1.1);
+}
 
 @media screen and (max-width: 1024px) {
-    .post-item__container {
-        width: 29rem;
-
-        
-    }
-    
+  .post-item__container {
+    width: 29rem;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .post-item__container {
-        width: 22rem;
-
-        
-    }
-    
+  .post-item__container {
+    width: 22rem;
+  }
 }
 
 @media screen and (max-width: 500px) {
-    .post-item__container {
-        width: 22rem;
-        padding: 3rem 1rem;
-
-        
-    }
-    
+  .post-item__container {
+    width: 22rem;
+    padding: 3rem 1rem;
+  }
 }

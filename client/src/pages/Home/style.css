@@ -1,87 +1,74 @@
 .home-container {
-    padding: 5rem 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 93vh;
-
+  padding: 5rem 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 93vh;
 }
 
-
 .home-wrapper {
-    padding: 4rem;
-    background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);   
-    width: 80vw;
-    height: 45vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    line-height: 1.8;
-
+  padding: 4rem;
+  background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
+  width: 80vw;
+  height: 45vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  line-height: 1.8;
 }
 
 .app-title {
-    color: white;
-    font-size: 45px;
-    letter-spacing: 1.1rem;
-
-
+  color: white;
+  font-size: 45px;
+  letter-spacing: 1.1rem;
 }
 
 .app-subtitle {
-    font-size: 23px;
-    font-weight: 400;
-    color: white;
-
-
+  font-size: 23px;
+  font-weight: 400;
+  color: white;
 }
 .read-blog__link {
-    background-color: white;
-    padding: 1.1rem;
-    width: 15rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color:  #ff5858;
-    font-weight: 700;
-    text-decoration: none;
-    text-transform: uppercase;
-    margin-top: 1rem;
-
-    
+  background-color: white;
+  padding: 1.1rem;
+  width: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ff5858;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-top: 1rem;
 }
 
 .read-blog__link:hover {
-    background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);   
-    color: white;
-    border: 2px solid white;
+  background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
+  color: white;
+  border: 2px solid white;
 }
 
 @media screen and (max-width: 768px) {
-    .home-container {
-        padding: 3rem 2rem;
-    }
-    .app-title {
-        font-size: 31px;
-    
-    
-    }
+  .home-container {
+    padding: 3rem 2rem;
+  }
+  .app-title {
+    font-size: 31px;
+  }
 }
 
 @media screen and (max-width: 500px) {
-    .home-wrapper {
-        padding: 2rem;
-        width: 90vw;
-    }
-    .app-title {
-        font-size: 25px;
-        letter-spacing: .5rem;
-    
-    
-    }
+  .home-wrapper {
+    padding: 2rem;
+    width: 90vw;
+  }
+  .app-title {
+    font-size: 25px;
+    letter-spacing: 0.5rem;
+  }
 
-    .app-subtitle {
-        font-size: 14px;
-    }
+  .app-subtitle {
+    font-size: 14px;
+  }
 }

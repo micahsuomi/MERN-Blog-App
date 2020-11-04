@@ -1,45 +1,42 @@
 .deletepost-wrapper {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: lightgoldenrodyellow;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgoldenrodyellow;
 }
 
 .deletepost-container {
-    padding: 2rem 2rem;
-    background-color: white;
+  padding: 2rem 2rem;
+  background-color: white;
 }
 
 .cancel-wrapper {
-    display: flex;
-    justify-content: flex-end;
-
+  display: flex;
+  justify-content: flex-end;
 }
 
 .warning {
-    color: var(--violet);
+  color: var(--violet);
 }
 
 .delete-cancel {
-    background-color: lightskyblue;
-
+  background-color: lightskyblue;
 }
 
 .delete-link {
-    text-decoration: none;
-    color: lightgrey;
+  text-decoration: none;
+  color: lightgrey;
 }
 
 .delete-link:hover {
-    color: var(--violet);
+  color: var(--violet);
 }
 
 .delete-link {
-    text-decoration: none;
+  text-decoration: none;
 }
 .delete-cancel:hover {
-    background-color: rgb(55, 139, 190);
-    transform: translateY(-.1rem);
-
+  background-color: rgb(55, 139, 190);
+  transform: translateY(-0.1rem);
 }

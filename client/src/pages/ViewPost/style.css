@@ -1,201 +1,182 @@
 .viewpost-wrapper {
-    padding: 5rem 14rem;
-    background-color: rgb(243, 237, 237);
-    width: 100vw;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center; 
-
+  padding: 5rem 8rem;
+  background-color: rgb(243, 237, 237);
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
 }
 
 .viewpost-container {
-    border: 1px solid lightgray;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-position: center;
-    background-size: cover;
-    border-radius: 8px;
-    overflow: hidden;
-    width: 80vw;
-    color: white;
-
-
+  border: 1px solid lightgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-position: center;
+  background-size: cover;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 80vw;
+  color: white;
 }
 
 .viewpost-header {
-    padding: 2rem 3rem;
-    width: 100%;
-
+  padding: 2rem 3rem;
+  width: 100%;
 }
 
 .back-to-posts__wrapper {
-    display: flex;
-    justify-content: flex-start;
-    
+  display: flex;
+  justify-content: flex-start;
 }
 
 .back-to-posts__container {
-    padding: 1.2rem;
-    display: flex;
-    justify-content: space-evenly;
-    font-family: 'Montserrat';
-
+  padding: 1.2rem;
+  display: flex;
+  justify-content: space-evenly;
+  font-family: "Montserrat";
 }
 
 .back-to-posts__link {
-    color: white;
-    text-decoration: none;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .back-to-posts__text {
-    margin-left: 1rem;
+  margin-left: 1rem;
 }
 .back-to-posts__link:hover {
-    color: rgb(211, 182, 182);
-    transform: translateY(-.1rem);
-
+  color: rgb(211, 182, 182);
+  transform: translateY(-0.1rem);
 }
 
-
-
 .viewpost-header-container {
-    display: flex;
-    justify-content: space-between;
-    
+  display: flex;
+  justify-content: space-between;
 }
 
 .viewpost-header {
-    color: black;
-    text-align: center
+  color: black;
+  text-align: center;
 }
 .viewpost-header-container h3 {
-    margin: 0;
-    font-size: 17px;
-    color: var(--dark);
+  margin: 0;
+  font-size: 17px;
+  color: var(--dark);
 }
 
 .viewpost-body {
-    background: rgb(247, 243, 243);
-    padding: 2rem 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  background: rgb(247, 243, 243);
+  padding: 2rem 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .post-image__big {
-    width: 50%;
-    align-self: center;
+  width: 65%;
+  align-self: center;
 }
 
 .viewpost-description {
-    color: rgb(14, 13, 13);
-    line-height: 1.8;
-    margin-top: 2rem;
-
+  color: rgb(14, 13, 13);
+  line-height: 1.8;
+  margin-top: 2rem;
 }
 .buttons-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
 button {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .btn-edit,
 .btn-delete {
-    padding: 1rem;
-    background-color: rgb(104, 210, 224);
-    border: none;
-    border-radius: 50px;
-    color: white;
-    cursor: pointer;
-    margin: 1rem;
-    font-family: 'Montserrat';
-    font-size: 14px;
-    text-transform: uppercase;
-    margin: 1.5rem;
-    width: 8rem;
-
-
+  padding: 1rem;
+  background-color: rgb(104, 210, 224);
+  border: none;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  margin: 1rem;
+  font-family: "Montserrat";
+  font-size: 14px;
+  text-transform: uppercase;
+  margin: 1.5rem;
+  width: 8rem;
 }
 
 .btn-delete {
-    background-color: #ee205e;
-    text-decoration: none;
-
+  background-color: #ee205e;
+  text-decoration: none;
 }
 
 .btn-edit:hover {
-    background-color: rgb(85, 152, 194);
-    transform: translateY(-.1rem);
+  background-color: rgb(85, 152, 194);
+  transform: translateY(-0.1rem);
 }
 .btn-delete:hover {
-    background-color: rgb(177, 43, 43);
-    transform: translateY(-.1rem);
-
+  background-color: rgb(177, 43, 43);
+  transform: translateY(-0.1rem);
 }
 
 @media screen and (max-width: 1024px) {
-    .viewpost-container {
-        width: 94vw;
-    }
+  .viewpost-container {
+    width: 94vw;
+  }
 
-    .viewpost-wrapper {
-        padding: 5rem 4rem;
-        min-height: 100vw;
-  
-    }
+  .viewpost-wrapper {
+    padding: 5rem 4rem;
+    min-height: 100vw;
+  }
 
-    .viewpost-body {
-        padding: 2rem 2rem;
-      
-    }
+  .viewpost-body {
+    padding: 2rem 2rem;
+  }
 }
 
 @media screen and (max-width: 500px) {
-    .viewpost-wrapper {
-        padding: 0;
-  
-    }
-    .header-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    h3 {
-        margin: .7rem;
-    }
-    .viewpost-container, 
-    .viewpost-body {
-        width: 22rem;
-    
-    }
+  .viewpost-wrapper {
+    padding: 0;
+  }
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  h3 {
+    margin: 0.7rem;
+  }
+  .viewpost-container,
+  .viewpost-body {
+    width: 22rem;
+  }
 
-    .viewpost-body {
-        padding: 1rem 1rem;
-      
-    }
+  .viewpost-body {
+    padding: 1rem 1rem;
+  }
 
-    .viewpost-header {
-        padding: 1rem 1rem;
-    }
+  .viewpost-header {
+    padding: 1rem 1rem;
+  }
 
-    .viewpost-description {
-        line-height: 1.1;
-    }
+  .viewpost-description {
+    line-height: 1.1;
+  }
 
-    .buttons-wrapper {
-        margin-top: 1rem;
-    }
+  .buttons-wrapper {
+    margin-top: 1rem;
+  }
 
-    .btn-edit, .btn-delete {
-        width: 7rem;
-        margin: .6rem;
-    }
+  .btn-edit,
+  .btn-delete {
+    width: 7rem;
+    margin: 0.6rem;
+  }
 }

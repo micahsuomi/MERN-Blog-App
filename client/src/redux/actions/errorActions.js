@@ -1,4 +1,1 @@
-export const errorAction = () => {
-    
-
-}
+export const errorAction = () => {};
