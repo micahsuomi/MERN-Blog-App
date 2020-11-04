@@ -108,9 +108,6 @@ img {
   border-radius: 3px;
 }
 
-.category-wrapper h3 {
-}
-
 .fa-readme:hover {
   color: rgb(86, 218, 235);
 }
@@ -131,19 +128,50 @@ img {
 
 @media screen and (max-width: 1024px) {
   .post-item__container {
-    width: 29rem;
+    width: 59rem;
+  }
+  .post-body {
+    grid-template-columns: 35% 65%;
   }
 }
 
 @media screen and (max-width: 768px) {
   .post-item__container {
-    width: 22rem;
+    padding: 1rem 1.1rem;
+  }
+  .post-item__container {
+    width: 44rem;
+  }
+  .post-image {
+    height: 180px;
+    width: 180px;
+  }
+  .post-title {
+    margin-top: 0;
+  }
+  .category-item {
+    width: 13rem;
+    padding: 0.3rem;
   }
 }
 
 @media screen and (max-width: 500px) {
   .post-item__container {
     width: 22rem;
-    padding: 3rem 1rem;
+    padding: 1rem 1rem;
+  }
+  .post-body {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .post-title {
+    margin-top: 1rem;
+  }
+  .category-item {
+    width: 15rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 1rem;
   }
 }

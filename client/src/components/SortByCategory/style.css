@@ -30,9 +30,9 @@
   opacity: 0;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 768px) {
   .cell__item {
-    width: 9rem;
+    width: 12rem;
     box-shadow: none;
   }
 }

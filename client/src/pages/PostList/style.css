@@ -32,10 +32,10 @@
 
 .posts-wrapper {
   margin-top: 3rem;
-  display: grid;
-  grid-template-columns: (1fr);
-  justify-items: center;
-  grid-gap: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .blog-header {
@@ -90,17 +90,14 @@
   }
 
   .posts-container {
-    padding: 3rem 2rem;
+    padding: 11rem 2rem;
   }
 
-  .posts-wrapper {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media screen and (max-width: 768px) {
   .posts-container {
-    padding: 2rem 1rem;
+    padding: 11rem 1rem;
   }
 }
 
@@ -110,7 +107,7 @@
   }
 
   .posts-container {
-    padding: 1rem 0.5rem;
+    padding: 13rem 0.5rem;
   }
 
   .sub-header {
@@ -118,7 +115,4 @@
     margin-left: 2.5rem;
   }
 
-  .posts-wrapper {
-    grid-template-columns: 1fr;
-  }
 }
