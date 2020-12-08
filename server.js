@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
 const Router = require("./server/routes/routes");
+import path from 'path'
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
