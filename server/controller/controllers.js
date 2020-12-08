@@ -1,6 +1,6 @@
 const Post = require("../models/Post");
 
-function getAllPostsAPI(req, res) {
+function getAllPosts(req, res) {
   Post.find({}, (err, posts) => {
     if (err) return res.status(404).send("Not Found");
     res.json(posts.reverse());
@@ -8,7 +8,7 @@ function getAllPostsAPI(req, res) {
   });
 }
 
-function getPostAPI(req, res) {
+function getPost(req, res) {
   const id = req.params.id;
   Post.findOne({ _id: id }, (err, post) => {
     if (err) return res.status(404).send("Not Found");
@@ -50,9 +50,9 @@ function deletePost(req, res) {
 }
 
 module.exports = {
-  getAllPostsAPI: getAllPostsAPI,
-  getPostAPI: getPostAPI,
-  addPost: addPost,
-  editPost: editPost,
-  deletePost: deletePost,
+  getAllPosts,
+  getPost,
+  addPost,
+  editPost,
+  deletePost
 };

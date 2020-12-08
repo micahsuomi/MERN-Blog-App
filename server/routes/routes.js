@@ -1,17 +1,17 @@
 const express = require("express");
 const Router = express.Router();
 const {
-  getAllPostsAPI,
-  getPostAPI,
+  getAllPosts,
+  getPost,
   addPost,
   editPost,
   deletePost,
 } = require("../controller/controllers");
 
-Router.get("/posts", getAllPostsAPI);
-Router.get("/viewpost/:id", getPostAPI);
-Router.post("/posts", addPost);
-Router.put("/posts/:id", editPost);
-Router.delete("/posts/:id", deletePost);
+Router.get("/api/v1/posts", getAllPosts);
+Router.get("/api/posts/:id", getPost);
+Router.post("/api/v1/posts", addPost);
+Router.put("/api/v1/posts/:id", editPost);
+Router.delete("/api/v1/posts/:id", deletePost);
 
 module.exports = Router;
