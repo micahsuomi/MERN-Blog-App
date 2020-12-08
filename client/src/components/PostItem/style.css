@@ -72,6 +72,7 @@
   justify-content: center;
   align-items: center;
   padding: 0 2rem;
+  width: 70vw;
 }
 .read:hover {
   /* background: rgb(131, 11, 71); */
@@ -94,6 +95,11 @@ img {
   height: 100%;
 }
 
+.post-content {
+  padding: 0 1.6rem;
+  line-height: 1.7;
+}
+
 .category-wrapper {
   display: flex;
   justify-content: center;
@@ -103,9 +109,13 @@ img {
   padding: 0.8rem;
 }
 .category-item {
-  width: 15rem;
+  width: 13rem;
   padding: 0.7rem;
   border-radius: 3px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
 }
 
 .fa-readme:hover {
