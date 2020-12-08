@@ -4,18 +4,33 @@
   justify-content: center;
   align-items: center;
   min-height: 93vh;
-}
-
-.home-wrapper {
-  padding: 4rem;
   background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
-  width: 80vw;
-  height: 45vh;
+  background-image: linear-gradient(
+      to right,
+      rgba(65, 62, 59, 0.63),
+      rgba(18, 11, 29, 0.9)
+    ),
+    url('https://images.pexels.com/photos/4458/cup-mug-desk-office.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940https://images.pexels.com/photos/731510/pexels-photo-731510.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500-');
+  background-position: center;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   line-height: 1.8;
+}
+
+.home-wrapper {
+  padding: 4rem;
+  width: 80vw;
+  height: 45vh;
+  height: 45vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
 }
 
 .app-title {

@@ -1,0 +1,38 @@
+name: Demo Workflo
+
+on:
+  push: 
+    branches: [master, develop]
+  pull_request:
+    branches: [develop]
+  
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+  steps: 
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Set up node js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+
+    - name: Echo node node-version
+      run: node --version
+
+    - name: Find out yearn cache directory
+      id: yarn-cache-dir
+      run: echo "::set-output name=dir::$(yarn cashe dir)"
+
+    - name: Install node modules
+      run: yarn Install
+
+    - name: Linting
+      run: yarn Linting
+
+  packges:
+      runs-on: ubuntu-latest  
+
+

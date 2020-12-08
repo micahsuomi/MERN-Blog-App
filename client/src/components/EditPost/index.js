@@ -31,7 +31,9 @@ const EditPost = (props) => {
     const id = props.match.params.id;
     dispatch(editPost(id, post));
     props.history.push(`/posts`);
-    dispatch(getPosts());
+    setTimeout(() => {
+      dispatch(getPosts());
+    }, 3000);
   };
 
   const handleChange = (e) => {

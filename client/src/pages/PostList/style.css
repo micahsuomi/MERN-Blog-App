@@ -23,6 +23,7 @@
 
 .sub-header {
   margin-top: 2rem;
+  margin-left: 2.5rem;
 }
 
 .posts-container {
@@ -112,7 +113,6 @@
 
   .sub-header {
     margin-top: 1.3rem;
-    margin-left: 2.5rem;
   }
 
 }

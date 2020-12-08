@@ -169,9 +169,10 @@ img {
   }
   .category-item {
     width: 15rem;
+    padding: 0.7rem;
     display: flex;
-    justify-content: space-between;
+    border-radius: 0px;
+    justify-content: space-around;
     align-items: center;
-    padding: .5rem 1rem;
   }
 }
