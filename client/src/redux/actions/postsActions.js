@@ -72,7 +72,6 @@ export const editPost = (id, updatedPost) => (dispatch) => {
 
 export const deletePost = (id) => (dispatch, getState) => {
   const url = `https://mern-blogsite-app.herokuapp.com/api/v1/posts/${id}`;
-  console.log("from actions", id);
 
   axios
     .delete(url, getState)
