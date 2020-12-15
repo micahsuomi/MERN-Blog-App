@@ -10,22 +10,23 @@ import {
 } from "./types";
 
 export const getPosts = () => (dispatch) => {
-  const url = "https://mern-blogsite-app.herokuapp.com/api/v1/posts";
+  const url = "api/v1/posts";
   axios
     .get(url)
-    .then((res) =>
+    .then((res) =>    
       dispatch({
         type: GET_POSTS,
         payload: res.data,
       })
     )
+
     .catch((error) => {
       console.log(error);
     });
 };
 
 export const addPost = (post) => (dispatch) => {
-  const url = "https://mern-blogsite-app.herokuapp.com/api/v1/posts";
+  const url = "api/v1/posts";
   axios
     .post(url, post)
     .then((res) =>
@@ -40,7 +41,7 @@ export const addPost = (post) => (dispatch) => {
 };
 
 export const getPost = (id) => (dispatch) => {
-  const url = `https://mern-blogsite-app.herokuapp.com/api/v1/posts`;
+  const url = `api/v1/posts`;
   axios
     .get(url)
     .then((res) =>
@@ -54,8 +55,7 @@ export const getPost = (id) => (dispatch) => {
     });
 };
 export const editPost = (id, updatedPost) => (dispatch) => {
-  const url = `https://mern-blogsite-app.herokuapp.com/api/v1/posts/${id}`;
-  console.log(updatedPost);
+  const url = `api/v1/posts/${id}`;
 
   axios
     .put(url, updatedPost)
@@ -71,7 +71,7 @@ export const editPost = (id, updatedPost) => (dispatch) => {
 };
 
 export const deletePost = (id) => (dispatch, getState) => {
-  const url = `https://mern-blogsite-app.herokuapp.com/api/v1/posts/${id}`;
+  const url = `api/v1/posts/${id}`;
 
   axios
     .delete(url, getState)
