@@ -15,6 +15,7 @@ import Footer from "./components/Footer/index";
 import "./App.css";
 
 import { Route, Switch } from "react-router-dom";
+import SortByCategory from "./components/SortByCategory";
 
 const Routes = () => {
   const dispatch = useDispatch();
@@ -24,7 +25,9 @@ const Routes = () => {
     query,
     postsToSort
   );
-  console.log(posts)
+
+  console.log(sortByCategory)
+
   useEffect(() => {
     dispatch(getPosts());
     setPostsToSort(posts);

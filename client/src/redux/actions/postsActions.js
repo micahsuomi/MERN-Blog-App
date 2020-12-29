@@ -9,8 +9,8 @@ import {
   SEARCH_POSTS,
 } from "./types";
 
-// const proxy = 'http://localhost:5000'
-const proxy = 'https://mern-blogsite-app.herokuapp.com/'
+const proxy = 'http://localhost:5000'
+// const proxy = 'https://mern-blogsite-app.herokuapp.com/'
 
 export const getPosts = () => (dispatch) => {
   const url = '/api/v1/posts';

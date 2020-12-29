@@ -6,6 +6,7 @@ import SortByCategory from "../../components/SortByCategory";
 import "./style.css";
 
 const About = ({ sortPosts, sortByAuthor, sortByCategory, isLoading }) => {
+  console.log(SortByCategory)
   return (
     <div className="about-container">
       <div className="about-header">
