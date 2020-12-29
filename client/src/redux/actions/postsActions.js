@@ -9,11 +9,13 @@ import {
   SEARCH_POSTS,
 } from "./types";
 
+const proxy = 'http://localhost:5000'
+
 export const getPosts = () => (dispatch) => {
-  const url = "api/v1/posts";
+  const url = '/api/v1/posts';
   axios
-    .get(url)
-    .then((res) =>    
+    .get(`${proxy}${url}`)
+    .then((res) =>   
       dispatch({
         type: GET_POSTS,
         payload: res.data,
@@ -26,9 +28,9 @@ export const getPosts = () => (dispatch) => {
 };
 
 export const addPost = (post) => (dispatch) => {
-  const url = "api/v1/posts";
+  const url = "/api/v1/posts";
   axios
-    .post(url, post)
+    .post(`${proxy}${url}`, post)
     .then((res) =>
       dispatch({
         type: ADD_POST,
@@ -41,9 +43,9 @@ export const addPost = (post) => (dispatch) => {
 };
 
 export const getPost = (id) => (dispatch) => {
-  const url = `api/v1/posts`;
+  const url = `/api/v1/posts`;
   axios
-    .get(url)
+    .get(`${proxy}${url}`)
     .then((res) =>
       dispatch({
         type: GET_POST,
@@ -55,11 +57,11 @@ export const getPost = (id) => (dispatch) => {
     });
 };
 export const editPost = (id, updatedPost) => (dispatch) => {
-  const url = `api/v1/posts/${id}`;
+  const url = `/api/v1/posts/${id}`;
 
   axios
-    .put(url, updatedPost)
-    .then((res) =>
+    .put(`${proxy}${url}`, updatedPost)
+    .then((res) =>    
       dispatch({
         type: EDIT_POST,
         payload: res.data,
@@ -71,10 +73,10 @@ export const editPost = (id, updatedPost) => (dispatch) => {
 };
 
 export const deletePost = (id) => (dispatch, getState) => {
-  const url = `api/v1/posts/${id}`;
+  const url = `/api/v1/posts/${id}`;
 
   axios
-    .delete(url, getState)
+    .delete(`${proxy}${url}`, getState)
     .then((res) =>
       dispatch({
         type: DELETE_POST,

@@ -24,6 +24,7 @@ const Routes = () => {
     query,
     postsToSort
   );
+  console.log(posts)
   useEffect(() => {
     dispatch(getPosts());
     setPostsToSort(posts);

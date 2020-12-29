@@ -3,7 +3,9 @@ const Post = require("../models/Post");
 function getAllPosts(req, res) {
   Post.find({}, (err, posts) => {
     if (err) return res.status(404).send("Not Found");
-    res.json(posts.reverse());
+    console.log('posts ae here', posts)
+    // posts.sort({ createdAt: -1 })
+    res.json(posts);
     console.log("posts are fetching");
   });
 }

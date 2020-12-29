@@ -8,13 +8,16 @@ const app = express();
 const Router = require("./server/routes/routes");
 const path = require('path'); 
 
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
+//use bodyparser
+app.use(express.json({ limit: "50mb" }));
+app.use(express.urlencoded({ limit: "50mb", extended: true }));
+app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
+app.use(bodyParser.json({ limit: "50mb", extended: true }));
 
+//user corse
 app.use(cors());
 
 // parse application/json
-app.use(bodyParser.json());
 const PORT = process.env.PORT || 5000;
 mongoose.connect(
   process.env.mongoDBurl,
@@ -27,6 +30,7 @@ mongoose.connect(
 
 //app.use(express.static(path.join(__dirname, './client/build')))
 //serve static assets if we are in production
+/*
 if (process.env.NODE_ENV === "production") {
   //set static folder
   app.use(express.static("client/build"));
@@ -34,7 +38,7 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
-
+*/
 app.use("/", Router);
 
 app.listen(PORT, () => {
