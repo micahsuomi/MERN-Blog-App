@@ -9,13 +9,13 @@ import {
   SEARCH_POSTS,
 } from "./types";
 
-// const proxy = 'http://localhost:5000'
-const proxy = 'https://mern-blogsite-app.herokuapp.com'
+const proxy = 'http://localhost:5000'
+//const proxy = 'https://mern-blogsite-app.herokuapp.com'
 
 export const getPosts = () => (dispatch) => {
   const url = '/api/v1/posts';
   axios
-    .get(`${proxy}${url}`)
+    .get(url)
     .then((res) =>   
       dispatch({
         type: GET_POSTS,
@@ -31,7 +31,7 @@ export const getPosts = () => (dispatch) => {
 export const addPost = (post) => (dispatch) => {
   const url = "/api/v1/posts";
   axios
-    .post(`${proxy}${url}`, post)
+    .post(url, post)
     .then((res) =>
       dispatch({
         type: ADD_POST,
@@ -46,7 +46,7 @@ export const addPost = (post) => (dispatch) => {
 export const getPost = (id) => (dispatch) => {
   const url = `/api/v1/posts`;
   axios
-    .get(`${proxy}${url}`)
+    .get(url)
     .then((res) =>
       dispatch({
         type: GET_POST,
@@ -61,7 +61,7 @@ export const editPost = (id, updatedPost) => (dispatch) => {
   const url = `/api/v1/posts/${id}`;
 
   axios
-    .put(`${proxy}${url}`, updatedPost)
+    .put(url, updatedPost)
     .then((res) =>    
       dispatch({
         type: EDIT_POST,
@@ -77,7 +77,7 @@ export const deletePost = (id) => (dispatch, getState) => {
   const url = `/api/v1/posts/${id}`;
 
   axios
-    .delete(`${proxy}${url}`, getState)
+    .delete(url, getState)
     .then((res) =>
       dispatch({
         type: DELETE_POST,
