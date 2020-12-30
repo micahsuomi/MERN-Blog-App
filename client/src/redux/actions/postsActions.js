@@ -13,7 +13,7 @@ import {
 //const proxy = 'https://mern-blogsite-app.herokuapp.com'
 
 export const getPosts = () => (dispatch) => {
-  const url = 'http://localhost:5000/api/v1/posts';
+  const url = 'https://mern-blogsite-app.herokuapp.com/api/v1/posts';
   axios
     .get(url)
     .then((res) =>   
