@@ -13,7 +13,7 @@ import {
 //const proxy = 'https://mern-blogsite-app.herokuapp.com'
 
 export const getPosts = () => (dispatch) => {
-  const url = 'http://localhost:5000/api/v1/posts';
+  const url = '/api/v1/posts';
   axios
     .get(url)
     .then((res) =>   
@@ -29,7 +29,7 @@ export const getPosts = () => (dispatch) => {
 };
 
 export const addPost = (post) => (dispatch) => {
-  const url = "http://localhost:5000/api/v1/posts";
+  const url = "/api/v1/posts";
   axios
     .post(url, post)
     .then((res) =>
@@ -44,7 +44,7 @@ export const addPost = (post) => (dispatch) => {
 };
 
 export const getPost = (id) => (dispatch) => {
-  const url = `http://localhost:5000/api/v1/posts`;
+  const url = `/api/v1/posts`;
   axios
     .get(url)
     .then((res) =>
@@ -58,7 +58,7 @@ export const getPost = (id) => (dispatch) => {
     });
 };
 export const editPost = (id, updatedPost) => (dispatch) => {
-  const url = `http://localhost:5000/api/v1/posts/${id}`;
+  const url = `/api/v1/posts/${id}`;
 
   axios
     .put(url, updatedPost)
@@ -74,7 +74,7 @@ export const editPost = (id, updatedPost) => (dispatch) => {
 };
 
 export const deletePost = (id) => (dispatch, getState) => {
-  const url = `http://localhost:5000/api/v1/posts/${id}`;
+  const url = `/api/v1/posts/${id}`;
 
   axios
     .delete(url, getState)
