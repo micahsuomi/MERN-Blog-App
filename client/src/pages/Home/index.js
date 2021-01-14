@@ -7,9 +7,9 @@ const Home = () => {
   return (
     <div className="home-container">
       <div className="home-wrapper">
-        <h1 className="app-title">Blog Mern App</h1>
+        <h1 className="app-title">Blog MERN App</h1>
         <h3 className="app-subtitle">
-          A Blog Mern App With React, Redux and Node
+          A Blog App With React, Redux and Node
         </h3>
         <NavLink to="/posts" className="read-blog__link">
           Read Blog
